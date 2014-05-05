@@ -41,9 +41,9 @@ class SdkManagerPlugin implements Plugin<Project> {
   }
 
   def time(String name, Closure task) {
-    long before = java.util.System.nanoTime()
+    long before = java.lang.System.nanoTime()
     task.run()
-    long after = java.util.System.nanoTime()
+    long after = java.lang.System.nanoTime()
     long took = TimeUnit.NANOSECONDS.toMillis(after - before)
     log.info "$name took $took ms."
   }
